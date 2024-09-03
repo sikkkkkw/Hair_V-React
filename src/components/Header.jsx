@@ -102,7 +102,7 @@ export default function Header() {
         {/* 모바일 메뉴 */}
         <div className={`fixed inset-y-0 right-0 h-full bg-white  z-20 transition-transform transform  ${isOpen ? 'translate-x-0' : 'translate-x-full'} w-1/2 md:hidden flex flex-col items-center pt-20 `}>
          <div className='flex flex-col'>
-          <div className='py-2 menu-item  '>스타일리스트</div>
+          <div className='py-2 menu-item'>스타일리스트</div>
           <div className='py-2 menu-item'>이벤트/헤어</div>
           <div className='py-2 menu-item'>영상</div>
           <div className='py-2 menu-item'>오시는길</div>
