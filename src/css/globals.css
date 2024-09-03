@@ -26,7 +26,7 @@
 .hamburger {
     position: relative;
     width: 24px;
-    height: 24px;
+    height: 22px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -60,7 +60,7 @@
   /* 토글 상태 스타일 */
   .hamburger.open div:nth-child(1) {
     transform: rotate(50deg);
-    top: 48%; /* 수직 중앙에 위치하도록 조정 */
+    top: 49%; /* 수직 중앙에 위치하도록 조정 */
   }
   
   .hamburger.open div:nth-child(2) {
@@ -69,7 +69,7 @@
   
   .hamburger.open div:nth-child(3) {
     transform: rotate(-50deg);
-    bottom: 44%; /* 수직 중앙에 위치하도록 조정 */
+    bottom: 45%; /* 수직 중앙에 위치하도록 조정 */
   }
   
   /* 모바일 모드에서만 햄버거 버튼 표시 */
@@ -80,3 +80,32 @@
       justify-content: center;
     }
   }
+  /* 헤더 밑줄 */
+  .header-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* 줄의 두께 */
+    background: linear-gradient(to right, #0094D8,#0069FF,#243B71); /* 그라데이션 색상 */
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underline-animation 5s ease-in-out infinite; /* 애니메이션 반복 */
+  }
+  
+  @keyframes underline-animation {
+    0% {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+  }
+
+  
