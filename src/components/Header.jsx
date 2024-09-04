@@ -61,10 +61,10 @@ export default function Header() {
     <>
       <Event isVisible={eventVisible} handleClose={handleEventClose} />
 
-      <div className={`fixed ${eventVisible ? 'top-8' : 'top-0'} left-0 w-full h-[80px] bg-white flex items-center justify-between px-4 lg:px-24 md:px-12 z-40 transition-transform duration-300 header`}>
+      <div className={`fixed ${eventVisible ? 'top-8' : 'top-0'} left-0 w-full h-[80px] bg-white flex items-center justify-between px-4 lg:px-32 md:px-12 z-40 transition-transform duration-300 header`}>
         <div className={`hidden md:flex space-x-4 ${isOpen ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
           <a href="#Instagram" className="w-[120px] text-center">스타일리스트</a>
-          <a href="#Hairimg" className="w-[120px] text-center">이벤트 / 헤어</a>
+          <a href="#Hairimg" className="w-[120px] text-center">사진</a>
         </div>
 
         <div className='flex items-center md:justify-center justify-start flex-1'>
@@ -73,7 +73,7 @@ export default function Header() {
 
         <div className={`hidden md:flex space-x-4 ${isOpen ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
           <div className="w-[120px] text-center">영상</div>
-          <div className="w-[120px] text-center">오시는길</div>
+          <a href="#information" className="w-[120px] text-center">오시는 길</a>
         </div>
 
         <button
@@ -88,9 +88,9 @@ export default function Header() {
         <div className={`fixed inset-y-0 right-0 h-full z-20 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} w-1/2 md:hidden flex flex-col items-center pt-20`} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
           <div className='flex flex-col'>
             <a href="#Instagram" className='py-2 menu-item'>스타일리스트</a>
-            <a href="#Hairimg" className='py-2 menu-item'>이벤트/헤어</a>
+            <a href="#Hairimg" className='py-2 menu-item'>헤어</a>
             <div className='py-2 menu-item'>영상</div>
-            <div className='py-2 menu-item'>오시는길</div>
+            <a href="#information"  className='py-2 menu-item'>오시는 길</a>
           </div>
         </div>
 

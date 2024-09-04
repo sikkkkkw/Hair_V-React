@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import image1 from '../img/가격.jpg'; 
+import image1 from '../img/마음원장.jfif'; 
 import image2 from '../img/헤어브이.jpg'; 
 import image3 from '../img/헤어브이2.jpg'; 
 import image4 from '../img/헤어브이3.jpg'; 
@@ -26,7 +26,7 @@ import image24 from '../img/파마.jfif';
 import { FaSearch, FaTimes } from 'react-icons/fa'; 
 
 const images = [
-  { src: image1, title: '가격표' },
+  { src: image1, title: '마음원장' },
   { src: image2, title: '가게시설' },
   { src: image3, title: '가게시설' },
   { src: image4, title: '가게시설' },
@@ -123,8 +123,8 @@ export default function Hairimg() {
   };
 
   return (
-    <div className="py-20 md:py-24 px-4 lg:px-20 relative">
-      <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">헤어</h2>
+    <div className="py-20 md:py-24 px-4 lg:px-20 relative ">
+      <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">사진</h2>
       <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
       <div className="relative flex justify-center mb-10">
@@ -161,7 +161,7 @@ export default function Hairimg() {
           <div className="loader"></div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {currentImages.map((image, index) => (
             <div key={index} className="relative overflow-hidden rounded-lg">
               {imageLoading[index] === false ? null : (
