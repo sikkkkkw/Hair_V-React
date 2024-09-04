@@ -84,37 +84,42 @@ export default function Hairimg() {
   };
 
   return (
-    <div className="py-12 px-4 lg:px-20 relative"> {/* relative 추가 */}
+    <div className="py-20 md:py-24 px-4 lg:px-20 relative">
+      <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8"> 헤어</h2>
+      <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
+
       {/* 검색 입력 필드 */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-md p-4"> {/* 절대 위치로 중앙 정렬 */}
-        <div className="flex items-center">
-          <input
-            type="text"
-            placeholder="검색..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={handleKeyDown} // 엔터 키 이벤트 핸들러 추가
-            className="px-4 py-2 w-full border border-gray-300 rounded-lg"
-          />
-          <button
-            onClick={handleSearch}
-            className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
-          >
-            <FaSearch />
-          </button>
-          {searchTerm && (
+      <div className="relative flex justify-center mb-10"> {/* 위치 조정 및 여백 추가 */}
+        <div className="w-full max-w-md">
+          <div className="flex items-center">
+            <input
+              type="text"
+              placeholder="검색..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyDown} // 엔터 키 이벤트 핸들러 추가
+              className="px-4 py-2 w-full border border-gray-300 rounded-lg"
+            />
             <button
-              onClick={handleReset}
-              className="ml-2 px-4 py-2 bg-gray-500 text-white rounded-lg shadow-md hover:bg-gray-600 transition duration-300 ease-in-out"
+              onClick={handleSearch}
+              className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
             >
-              <FaTimes />
+              <FaSearch />
             </button>
-          )}
+            {searchTerm && (
+              <button
+                onClick={handleReset}
+                className="ml-2 px-4 py-2 bg-gray-500 text-white rounded-lg shadow-md hover:bg-gray-600 transition duration-300 ease-in-out"
+              >
+                <FaTimes />
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
       {/* 이미지 그리드 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {currentImages.map((image, index) => (
           <div key={index} className="relative overflow-hidden rounded-lg">
             <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-lg">

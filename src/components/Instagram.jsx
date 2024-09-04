@@ -22,7 +22,7 @@ export default function Instagram() {
   ];
 
   return (
-    <div className="bg-gray-100 py-12 px-4 lg:px-20 w-full">
+    <div className="bg-gray-100 py-20 md:py-24 px-4 lg:px-20 w-full ">
       <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">스타일리스트</h2>
       <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
