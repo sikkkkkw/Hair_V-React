@@ -1,16 +1,24 @@
 import React, { useEffect } from 'react';
 import pricelist from '../img/가격.jpg';
 
-const { kakao } = window;
-
 export default function KakaoMap() {
     useEffect(() => {
-        const container = document.getElementById('map');
-        const options = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667),
-            level: 3
+        // Kakao Maps API를 동적으로 로드
+        const script = document.createElement('script');
+        script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAO_API_KEY}&autoload=false`;
+        script.async = true;
+        document.head.appendChild(script);
+
+        script.onload = () => {
+            window.kakao.maps.load(() => {
+                const container = document.getElementById('map');
+                const options = {
+                    center: new  window.kakao.maps.LatLng(33.450701, 126.570667),
+                    level: 3
+                };
+                const map = new  window.kakao.maps.Map(container, options);
+            });
         };
-        const map = new kakao.maps.Map(container, options);
     }, []);
 
     return (
@@ -31,14 +39,13 @@ export default function KakaoMap() {
                         <p><strong>우편번호: 42144</strong></p>
                         
                         <h2 className="text-2xl font-semibold text-gray-800 mt-6">영업시간</h2>
-                        <p><strong>화~수: 11:00 ~ 20:00</strong>  </p>
+                        <p><strong>화~수: 11:00 ~ 20:00</strong></p>
                         <p><strong>월: 정기휴무(매주 월요일)</strong></p>
 
                         <h2 className="text-2xl font-semibold text-gray-800 mt-6">편의시설</h2>
-                        <p><strong> 건물 내 무료 주차</strong></p>
-                        <p><strong>무선인터넷</strong></p>
+                        <p><strong>건물 내 무료 주차</strong></p>
+                        <p><strong>무선 인터넷</strong></p>
                         <p><strong>메이크업</strong></p>
-    
                     </div>
 
                     <div className="mt-6 md:mt-0 md:w-[50%] md:pl-8">
