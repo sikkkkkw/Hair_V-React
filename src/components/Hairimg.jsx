@@ -26,7 +26,7 @@ import image24 from '../img/파마.jfif'; // 로컬 이미지 경로
 import { FaSearch, FaTimes } from 'react-icons/fa'; // 검색 및 초기화 아이콘
 
 const images = [
-  { src: image1, title: '헤어가격' },
+  { src: image1, title: '가격표' },
   { src: image2, title: '가게시설' },
   { src: image3, title: '가게시설' },
   { src: image4, title: '가게시설' },
