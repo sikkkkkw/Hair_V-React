@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import image1 from '../img/가격.jpg'; // 로컬 이미지 경로
-import image2 from '../img/헤어브이.jpg'; // 로컬 이미지 경로
-import image3 from '../img/헤어브이2.jpg'; // 로컬 이미지 경로
-import image4 from '../img/헤어브이3.jpg'; // 로컬 이미지 경로
-import image5 from '../img/물결펌1.jpg'; // 로컬 이미지 경로
-import image6 from '../img/물결펌2.jpg'; // 로컬 이미지 경로
-import image7 from '../img/번헤어1.jpg'; // 로컬 이미지 경로
-import image8 from '../img/번헤어2.jpg'; // 로컬 이미지 경로
-import image9 from '../img/무거운레이어드1.jpg'; // 로컬 이미지 경로
-import image10 from '../img/무거운레이어드2.jpg'; // 로컬 이미지 경로
-import image11 from '../img/태슬컷1.jpg'; // 로컬 이미지 경로
-import image12 from '../img/태슬컷2.jpg'; // 로컬 이미지 경로
-import image13 from '../img/빌드펌1.jfif'; // 로컬 이미지 경로
-import image14 from '../img/빌드펌2.jfif'; // 로컬 이미지 경로
-import image15 from '../img/포인트 염색2.jpg'; // 로컬 이미지 경로
-import image16 from '../img/허쉬레이어드펌.jfif'; // 로컬 이미지 경로
-import image17 from '../img/마음중단발레이어드.jpg'; // 로컬 이미지 경로
-import image18 from '../img/중단발레이어드.jfif'; // 로컬 이미지 경로
-import image19 from '../img/젤리펌.jfif'; // 로컬 이미지 경로
-import image20 from '../img/젤리펌.jpg'; // 로컬 이미지 경로
-import image21 from '../img/시스루댄디.jpg'; // 로컬 이미지 경로
-import image22 from '../img/시스루애즈펌.jpg'; // 로컬 이미지 경로
-import image23 from '../img/가르마펌.jpg'; // 로컬 이미지 경로
-import image24 from '../img/파마.jfif'; // 로컬 이미지 경로
-import { FaSearch, FaTimes } from 'react-icons/fa'; // 검색 및 초기화 아이콘
+import React, { useState, useEffect } from 'react';
+import image1 from '../img/가격.jpg'; 
+import image2 from '../img/헤어브이.jpg'; 
+import image3 from '../img/헤어브이2.jpg'; 
+import image4 from '../img/헤어브이3.jpg'; 
+import image5 from '../img/물결펌1.jpg'; 
+import image6 from '../img/물결펌2.jpg'; 
+import image7 from '../img/번헤어1.jpg'; 
+import image8 from '../img/번헤어2.jpg'; 
+import image9 from '../img/무거운레이어드1.jpg'; 
+import image10 from '../img/무거운레이어드2.jpg'; 
+import image11 from '../img/태슬컷1.jpg'; 
+import image12 from '../img/태슬컷2.jpg'; 
+import image13 from '../img/빌드펌1.jfif'; 
+import image14 from '../img/빌드펌2.jfif'; 
+import image15 from '../img/포인트 염색2.jpg'; 
+import image16 from '../img/허쉬레이어드펌.jfif'; 
+import image17 from '../img/마음중단발레이어드.jpg'; 
+import image18 from '../img/중단발레이어드.jfif'; 
+import image19 from '../img/젤리펌.jfif'; 
+import image20 from '../img/젤리펌.jpg'; 
+import image21 from '../img/시스루댄디.jpg'; 
+import image22 from '../img/시스루애즈펌.jpg'; 
+import image23 from '../img/가르마펌.jpg'; 
+import image24 from '../img/파마.jfif'; 
+import { FaSearch, FaTimes } from 'react-icons/fa'; 
 
 const images = [
   { src: image1, title: '가격표' },
@@ -56,10 +56,41 @@ export default function Hairimg() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredImages, setFilteredImages] = useState(images);
-  const imagesPerPage = 12; // 한 페이지당 표시할 이미지 수
+  const [loading, setLoading] = useState(true);
+  const imagesPerPage = 12; 
   const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
 
-  // 현재 페이지의 이미지 인덱스를 계산합니다
+  useEffect(() => {
+    setLoading(true);
+    const imgElements = filteredImages
+      .slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage)
+      .map((image) => {
+        const img = new Image();
+        img.src = image.src;
+        return img;
+      });
+
+    const onAllImagesLoaded = () => {
+      setLoading(false);
+    };
+
+    let imagesLoadedCount = 0;
+    imgElements.forEach((imgElement) => {
+      imgElement.onload = () => {
+        imagesLoadedCount++;
+        if (imagesLoadedCount === imgElements.length) {
+          onAllImagesLoaded();
+        }
+      };
+    });
+
+    return () => {
+      imgElements.forEach((imgElement) => {
+        imgElement.onload = null;
+      });
+    };
+  }, [currentPage, filteredImages]);
+
   const currentImages = filteredImages.slice((currentPage - 1) * imagesPerPage, currentPage * imagesPerPage);
 
   const handleSearch = () => {
@@ -68,13 +99,13 @@ export default function Hairimg() {
         image.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-    setCurrentPage(1); // 검색 후 첫 페이지로 돌아가기
+    setCurrentPage(1);
   };
 
   const handleReset = () => {
     setSearchTerm('');
     setFilteredImages(images);
-    setCurrentPage(1); // 초기화 후 첫 페이지로 돌아가기
+    setCurrentPage(1);
   };
 
   const handleKeyDown = (event) => {
@@ -88,8 +119,7 @@ export default function Hairimg() {
       <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8"> 헤어</h2>
       <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
-      {/* 검색 입력 필드 */}
-      <div className="relative flex justify-center mb-10"> {/* 위치 조정 및 여백 추가 */}
+      <div className="relative flex justify-center mb-10">
         <div className="w-full max-w-md">
           <div className="flex items-center">
             <input
@@ -97,7 +127,7 @@ export default function Hairimg() {
               placeholder="검색..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyDown={handleKeyDown} // 엔터 키 이벤트 핸들러 추가
+              onKeyDown={handleKeyDown} 
               className="px-4 py-2 w-full border border-gray-300 rounded-lg"
             />
             <button
@@ -118,23 +148,27 @@ export default function Hairimg() {
         </div>
       </div>
 
-      {/* 이미지 그리드 */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {currentImages.map((image, index) => (
-          <div key={index} className="relative overflow-hidden rounded-lg">
-            <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-lg">
-              <img 
-                src={image.src} 
-                alt={image.title} 
-                className="w-full h-full object-cover rounded-lg"
-              />
+      {loading ? (
+        <div className="flex justify-center items-center h-64">
+          <div className="loader"></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {currentImages.map((image, index) => (
+            <div key={index} className="relative overflow-hidden rounded-lg">
+              <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-lg">
+                <img 
+                  src={image.src} 
+                  alt={image.title} 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent text-white text-center py-2 rounded-b-lg">{image.title}</div>
             </div>
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent text-white text-center py-2 rounded-b-lg">{image.title}</div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
-      {/* 페이지네이션 */}
       <div className="flex justify-center mt-8 space-x-2">
         <button
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
@@ -155,3 +189,4 @@ export default function Hairimg() {
     </div>
   );
 }
+
