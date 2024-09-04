@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Hairimg from "./components/Hairimg";
 import Header from "./components/Header";
 import Instagram from "./components/Instagram";
-import './index.css';
 
 
 function App() {
@@ -26,6 +25,7 @@ function App() {
     <>
       {isLoading && (
         <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
+          {/* <div className="loader">Loading...</div> */}
         </div>
       )}
 
