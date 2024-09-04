@@ -26,7 +26,7 @@ import image24 from '../img/파마.jfif';
 import { FaSearch, FaTimes } from 'react-icons/fa'; 
 
 const images = [
-  { src: image1, title: '마음원장' },
+  { src: image1, title: '마음 원장' },
   { src: image2, title: '가게시설' },
   { src: image3, title: '가게시설' },
   { src: image4, title: '가게시설' },
