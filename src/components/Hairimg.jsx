@@ -57,6 +57,7 @@ export default function Hairimg() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredImages, setFilteredImages] = useState(images);
   const [loading, setLoading] = useState(true);
+  const [imageLoading, setImageLoading] = useState({});
   const imagesPerPage = 12; 
   const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
 
@@ -114,9 +115,16 @@ export default function Hairimg() {
     }
   };
 
+  const handleImageLoad = (index) => {
+    setImageLoading(prev => ({
+      ...prev,
+      [index]: false
+    }));
+  };
+
   return (
     <div className="py-20 md:py-24 px-4 lg:px-20 relative">
-      <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8"> 헤어</h2>
+      <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">헤어</h2>
       <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
       <div className="relative flex justify-center mb-10">
@@ -127,7 +135,7 @@ export default function Hairimg() {
               placeholder="검색..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyDown={handleKeyDown} 
+              onKeyDown={handleKeyDown}
               className="px-4 py-2 w-full border border-gray-300 rounded-lg"
             />
             <button
@@ -156,14 +164,23 @@ export default function Hairimg() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {currentImages.map((image, index) => (
             <div key={index} className="relative overflow-hidden rounded-lg">
+              {imageLoading[index] === false ? null : (
+                <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                  <div className="loader"></div>
+                </div>
+              )}
               <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded-lg">
-                <img 
-                  src={image.src} 
-                  alt={image.title} 
+                <img
+                  src={image.src}
+                  alt={image.title}
                   className="w-full h-full object-cover rounded-lg"
+                  onLoad={() => handleImageLoad(index)}
+                  onError={() => handleImageLoad(index)}
                 />
               </div>
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent text-white text-center py-2 rounded-b-lg">{image.title}</div>
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent text-white text-center py-2 rounded-b-lg">
+                {image.title}
+              </div>
             </div>
           ))}
         </div>
@@ -189,4 +206,3 @@ export default function Hairimg() {
     </div>
   );
 }
-
