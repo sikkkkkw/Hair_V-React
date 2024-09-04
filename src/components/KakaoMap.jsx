@@ -22,7 +22,7 @@ export default function KakaoMap() {
                 <div id="map" className="w-full h-96"></div>
             </div>
 
-            <div className="w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden p-8 space-y-6">
+            <div className="w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden p-10 space-y-6">
                 <div className="flex flex-col md:flex-row justify-between items-start">
                     <div className="text-gray-700 space-y-4 md:w-3/5">
                         <h2 className="text-2xl font-bold text-gray-800">매장 정보</h2>
