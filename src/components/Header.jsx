@@ -97,13 +97,13 @@ export default function Header() {
           <div className='flex flex-col items-center mt-4 space-y-4'>
             {/* 소셜미디어 아이콘 추가 */}
             <div className='flex space-x-4'>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className='text-gray-700 hover:text-gray-900'>
+              <a href="https://www.instagram.com/hair_v.maeum" target="_blank" rel="noopener noreferrer" className='text-gray-700 hover:text-gray-900'>
                 <FaInstagram size={24} />
               </a>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className='text-gray-700 hover:text-gray-900'>
+              <a href="https://www.youtube.com/@su2__jung/featured" target="_blank" rel="noopener noreferrer" className='text-gray-700 hover:text-gray-900'>
                 <FaYoutube size={24} />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className='text-gray-700 hover:text-gray-900'>
+              <a href="https://www.facebook.com/profile.php?id=100003521889847&locale=ko_KR" target="_blank" rel="noopener noreferrer" className='text-gray-700 hover:text-gray-900'>
                 <FaFacebook size={24} />
               </a>
             </div>
