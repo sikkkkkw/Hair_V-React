@@ -61,7 +61,7 @@ export default function Header() {
     <>
       <Event isVisible={eventVisible} handleClose={handleEventClose} />
 
-      <div className={`fixed ${eventVisible ? 'top-8' : 'top-0'} left-0 w-full h-[80px] bg-white flex items-center justify-between px-4 lg:px-32 md:px-12 z-40 transition-transform duration-300 header`}>
+      <div id="header" className={`fixed ${eventVisible ? 'top-8' : 'top-0'} left-0 w-full h-[80px] bg-white flex items-center justify-between px-4 lg:px-32 md:px-12 z-40 transition-transform duration-300 header`}>
         <div className={`hidden md:flex space-x-4 ${isOpen ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}>
           <a href="#Instagram" className="w-[120px] text-center">스타일리스트</a>
           <a href="#Hairimg" className="w-[120px] text-center">사진</a>
