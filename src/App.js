@@ -11,12 +11,15 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading delay
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000); // Adjust the delay as needed
+    const handleLoad = () => setLoading(false);
 
-    return () => clearTimeout(timer);
+    // Check if the page is already loaded
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
   }, []);
 
   return (
@@ -39,5 +42,3 @@ function App() {
 }
 
 export default App;
-
-
