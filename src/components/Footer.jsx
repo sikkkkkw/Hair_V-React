@@ -1,4 +1,5 @@
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+import '../css/font.css';
 
 export default function Footer() {
   return (
@@ -33,7 +34,7 @@ export default function Footer() {
         </div>
 
         {/* 회사 정보 */}
-        <div className="text-center text-white text-sm">
+        <div className="text-center text-white text-sm fonttest">
           <p>© 2024 Your Company Name. All rights reserved.</p>
           <p>
             <a

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../css/font.css';
 import image1 from '../img/마음원장.jfif'; 
 import image2 from '../img/헤어브이.jpg'; 
 import image3 from '../img/헤어브이2.jpg'; 
@@ -123,7 +124,7 @@ export default function Hairimg() {
   };
 
   return (
-    <div className="py-20 md:py-24 px-4 lg:px-20 relative ">
+    <div className="py-20 md:py-24 px-4 lg:px-20 relative fonttest">
       <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">사진</h2>
       <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 

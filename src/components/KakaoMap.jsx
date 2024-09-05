@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import pricelist from '../img/가격.jpg';
+import '../css/font.css';
 
 export default function KakaoMap() {
     useEffect(() => {
@@ -67,7 +68,7 @@ export default function KakaoMap() {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center py-20 md:py-24 px-4 bg-gray-100">
+        <div className="flex flex-col justify-center items-center py-20 md:py-24 px-4 bg-gray-100 fonttest">
             <style>{`
                 html, body {width:100%;height:100%;margin:0;padding:0;} 
     .map_wrap {position:relative;overflow:hidden;width:100%;height:350px; z-index: 0;}
@@ -87,7 +88,7 @@ export default function KakaoMap() {
             `}</style>
 
 
-            <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">오시는 길</h2>
+            <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 ">오시는 길</h2>
             <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
             <div className="relative w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden mb-8">
