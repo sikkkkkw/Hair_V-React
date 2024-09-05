@@ -7,7 +7,7 @@ export default function Footer() {
         {/* 소셜 미디어 아이콘 */}
         <div className="flex justify-center space-x-6 mb-4">
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/hair_v.maeum"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300"
@@ -15,7 +15,7 @@ export default function Footer() {
             <FaInstagram size={24} />
           </a>
           <a
-            href="https://www.youtube.com"
+            href="https://www.youtube.com/@su2__jung/featured"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300"
@@ -23,7 +23,7 @@ export default function Footer() {
             <FaYoutube size={24} />
           </a>
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/profile.php?id=100003521889847&locale=ko_KR"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-gray-300"
