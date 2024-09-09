@@ -17,8 +17,8 @@ export default function Event({ isVisible, handleClose }) {
         <div className='flex-1 text-center text-sm md:text-base lg:text-lg truncate'>
           마음입니다! 한분 한분 최선을 다해 만족 시켜 드리겠습니다.
         </div>
-        <div className='pr-4 cursor-pointer' onClick={handleClose}>
-          <img src={X} alt="Close" className="h-4 w-4" /> 
+        <div className='md:pr-4 cursor-pointer' onClick={handleClose}>
+          <img src={X} alt="Close" className="h-4 w-4" />
         </div>
       </div>
     )
