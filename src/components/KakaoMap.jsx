@@ -117,8 +117,8 @@ export default function KakaoMap() {
                         <p><strong>전화번호: 053-768-7738</strong></p>
 
                         <h2 className="text-2xl font-semibold text-gray-800 mt-6">영업시간</h2>
-                        <p><strong>화~수: 11:00 ~ 20:00</strong></p>
-                        <p><strong>월: 정기휴무(매주 월요일)</strong></p>
+                        <p><strong>11:00 ~ 20:00</strong></p>
+                        <p><strong>매주 월요일 정기휴무</strong></p>
 
                         <h2 className="text-2xl font-semibold text-gray-800 mt-6">편의시설</h2>
                         <p><strong>건물 내 무료 주차</strong></p>
