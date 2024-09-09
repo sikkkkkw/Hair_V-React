@@ -6,6 +6,7 @@ import Instagram from "./components/Instagram";
 import KakaoMap from "./components/KakaoMap";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollToTop from './components/ScrollToTop';
+import VideoSection from './components/VideoSection';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,9 @@ function App() {
       </div>
       <div id="Hairimg" className="w-full">
         <Hairimg />
+      </div>
+      <div id="video" className="w-full">
+        <VideoSection />
       </div>
       <div id="information" className="w-full">
         <KakaoMap />

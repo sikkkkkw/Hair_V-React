@@ -68,7 +68,7 @@ export default function KakaoMap() {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center py-20 md:py-24 px-4 bg-gray-100 fonttest">
+        <div className="flex flex-col justify-center items-center py-20 md:py-24 px-4 fonttest">
             <style>{`
                 html, body {width:100%;height:100%;margin:0;padding:0;} 
     .map_wrap {position:relative;overflow:hidden;width:100%;height:350px; z-index: 0;}

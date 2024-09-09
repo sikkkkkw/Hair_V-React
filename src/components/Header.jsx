@@ -74,7 +74,7 @@ export default function Header() {
         </div>
 
         <div className={`hidden md:flex space-x-4 ${isOpen ? 'opacity-0' : 'opacity-100'} fonttest transition-opacity duration-300`}>
-          <div className="w-[120px] text-xl  text-center">영상</div>
+          <a href="#video" className="w-[120px] text-xl  text-center">영상</a>
           <a href="#information" className="w-[120px] text-xl  text-center">오시는 길</a>
         </div>
 
@@ -91,7 +91,7 @@ export default function Header() {
           <div className='flex flex-col fonttest'>
             <a href="#Instagram" className='py-2 menu-item'>스타일리스트</a>
             <a href="#Hairimg" className='py-2 menu-item'>사진</a>
-            <div className='py-2 menu-item'>영상</div>
+            <a href="#video" className='py-2 menu-item'>영상</a>
             <a href="#information"  className='py-2 menu-item'>오시는 길</a>
           </div>
           <div className='flex flex-col items-center mt-4 space-y-4'>
