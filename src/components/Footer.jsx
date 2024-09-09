@@ -35,21 +35,11 @@ export default function Footer() {
 
         {/* 회사 정보 */}
         <div className="text-center text-white text-sm fonttest">
-          <p>© 2024 Your Company Name. All rights reserved.</p>
+          <p>(42144) 대구광역시 황금동 691-3</p>
           <p>
-            <a
-              href="/privacy"
-              className="hover:underline hover:text-gray-100"
-            >
-              Privacy Policy
-            </a>{" "}
-            |{" "}
-            <a
-              href="/terms"
-              className="hover:underline hover:text-gray-100"
-            >
-              Terms of Service
-            </a>
+
+          사업자등록번호 : 641-34-01431{" "}
+            |{" "} 대표자 : 최수정
           </p>
         </div>
       </div>
