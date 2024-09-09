@@ -5,25 +5,25 @@ import image2 from '../img/헤어브이.jpg';
 import image3 from '../img/헤어브이2.jpg'; 
 import image4 from '../img/헤어브이3.jpg'; 
 import image5 from '../img/물결펌1.jpg'; 
-import image6 from '../img/물결펌2.jpg'; 
-import image7 from '../img/번헤어1.jpg'; 
-import image8 from '../img/번헤어2.jpg'; 
-import image9 from '../img/무거운레이어드1.jpg'; 
-import image10 from '../img/무거운레이어드2.jpg'; 
-import image11 from '../img/태슬컷1.jpg'; 
-import image12 from '../img/태슬컷2.jpg'; 
+import image6 from '../img/번헤어1.jpg'; 
+import image7 from '../img/무거운레이어드1.jpg'; 
+import image8 from '../img/태슬컷1.jpg'; 
+import image9 from '../img/레이어드컷.jfif'; 
+import image10 from '../img/파마.jfif'; 
+import image11 from '../img/포인트 애교머리 스타일링.jpg'; 
+import image12 from '../img/중단발레이어드.jfif'; 
 import image13 from '../img/빌드펌1.jfif'; 
-import image14 from '../img/빌드펌2.jfif'; 
+import image14 from '../img/롱 레이어드.jpg'; 
 import image15 from '../img/포인트 염색2.jpg'; 
-import image16 from '../img/허쉬레이어드펌.jfif'; 
+import image16 from '../img/가르마펌.jpg'; 
 import image17 from '../img/마음중단발레이어드.jpg'; 
-import image18 from '../img/중단발레이어드.jfif'; 
-import image19 from '../img/젤리펌.jfif'; 
+import image18 from '../img/레이어드1.jfif'; 
+import image19 from '../img/물결펌.jfif'; 
 import image20 from '../img/젤리펌.jpg'; 
-import image21 from '../img/시스루댄디.jpg'; 
-import image22 from '../img/시스루애즈펌.jpg'; 
-import image23 from '../img/가르마펌.jpg'; 
-import image24 from '../img/파마.jfif'; 
+import image21 from '../img/미디움 시스루 댄디1.jpg'; 
+import image22 from '../img/미디움 애즈펌.jpg'; 
+import image23 from '../img/미디움 시스루 댄디.jpg'; 
+import image24 from '../img/허쉬레이어드펌.jfif'; 
 import { FaSearch, FaTimes } from 'react-icons/fa'; 
 
 const images = [
@@ -32,25 +32,25 @@ const images = [
   { src: image3, title: '가게시설' },
   { src: image4, title: '가게시설' },
   { src: image5, title: '물결펌' },
-  { src: image6, title: '물결펌' },
-  { src: image7, title: '번헤어' },
-  { src: image8, title: '번헤어' },
-  { src: image9, title: '무거운레이어드' },
-  { src: image10, title: '무거운레이어드' },
-  { src: image11, title: '태슬컷' },
-  { src: image12, title: '태슬컷' },
+  { src: image6, title: '번헤어' },
+  { src: image7, title: '무거운레이어드' },
+  { src: image8, title: '태슬컷' },
+  { src: image9, title: '레이어드컷' },
+  { src: image10, title: '파마' },
+  { src: image11, title: '포인트 애교머리 스타일링' },
+  { src: image12, title: '중단발레이어드' },
   { src: image13, title: '빌드펌' },
-  { src: image14, title: '빌드펌' },
-  { src: image15, title: '포인트 염색2' },
-  { src: image16, title: '허쉬레이어드펌' },
+  { src: image14, title: '롱 레이어드' },
+  { src: image15, title: '포인트 염색' },
+  { src: image16, title: '가르마펌' },
   { src: image17, title: '중단발레이어드' },
-  { src: image18, title: '중단발레이어드' },
-  { src: image19, title: '젤리펌' },
+  { src: image18, title: '레이어드컷' },
+  { src: image19, title: '물결펌' },
   { src: image20, title: '젤리펌' },
-  { src: image21, title: '시스루댄디' },
-  { src: image22, title: '시스루애즈펌' },
-  { src: image23, title: '가르마펌' },
-  { src: image24, title: '파마' },
+  { src: image21, title: '미디움 시스루 댄디' },
+  { src: image22, title: '미디움 애즈펌' },
+  { src: image23, title: '미디움 시스루 댄디' },
+  { src: image24, title: '허쉬레이어드펌' },
 ];
 
 export default function Hairimg() {
@@ -162,7 +162,7 @@ export default function Hairimg() {
           <div className="loader"></div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {currentImages.map((image, index) => (
             <div key={index} className="relative overflow-hidden rounded-lg">
               {imageLoading[index] === false ? null : (
