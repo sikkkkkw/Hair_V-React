@@ -11,7 +11,7 @@ export default function VideoSection() {
                 <div className="w-full h-[480px]">
                     <iframe
                         className="w-full h-full"
-                        src="https://www.youtube.com/embed/yz3ZU5X6Y-A"
+                        src="https://www.youtube.com/embed/CpqAVaO5py4"
                         title="YouTube video"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

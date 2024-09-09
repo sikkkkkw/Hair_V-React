@@ -16,7 +16,7 @@ export default function Event({ isVisible, handleClose }) {
       <div className='bg-blue-400 w-full h-8 z-50 fixed top-0 left-0 flex justify-between items-center fonttest overflow-hidden'>
         <div className='flex-1 text-center whitespace-nowrap overflow-hidden'>
           <div className="inline-block animate-slide">
-            안녕하세요. 마음입니다! 한분 한분 최선을 다해 만족 시켜 드리겠습니다.
+            안녕하세요. 헤어브이입니다! 한분 한분 최선을 다해 만족 시켜 드리겠습니다.
           </div>
         </div>
         <div className='md:pr-4 pl-2 cursor-pointer' onClick={handleClose}>
