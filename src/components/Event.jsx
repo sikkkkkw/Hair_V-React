@@ -19,7 +19,7 @@ export default function Event({ isVisible, handleClose }) {
             안녕하세요. 헤어브이입니다! 한분 한분 최선을 다해 만족 시켜 드리겠습니다.
           </div>
         </div>
-        <div className='md:pr-4 pl-2 cursor-pointer' onClick={handleClose}>
+        <div className='px-2 justify-center flex items-center cursor-pointer' onClick={handleClose}>
           <img src={X} alt="Close" className="h-4 w-4" />
         </div>
       </div>
