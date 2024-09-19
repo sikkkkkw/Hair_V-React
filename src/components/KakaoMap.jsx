@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import pricelist from '../img/가격.jpg';
 import '../css/font.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWifi, faWheelchair, faParking, faRestroom, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 export default function KakaoMap() {
     useEffect(() => {
@@ -69,9 +71,10 @@ export default function KakaoMap() {
 
     return (
         <div className="flex flex-col justify-center items-center py-20 md:py-24 px-4 fonttest">
-            <style>{`
+            <style>
+                {`
                 html, body {width:100%;height:100%;margin:0;padding:0;} 
-    .map_wrap {position:relative;overflow:hidden;width:100%;height:350px; z-index: 0;}
+                .map_wrap {position:relative;overflow:hidden;width:100%;height:350px; z-index: 0;}
                 .radius_border{border:1px solid #919191;border-radius:5px;}     
                 .custom_typecontrol {position:absolute;top:10px;right:10px;overflow:hidden;width:130px;height:30px;margin:0;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;}
                 .custom_typecontrol span {display:block;width:65px;height:30px;float:left;text-align:center;line-height:30px;cursor:pointer;}
@@ -84,11 +87,26 @@ export default function KakaoMap() {
                 .custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
                 .custom_zoomcontrol span {display:flex;align-items:center;justify-content:center;width:36px;height:40px;cursor:pointer;}     
                 .custom_zoomcontrol span img {width:20px;height:20px;border:none;}             
-                .custom_zoomcontrol span:first-child {border-bottom:1px solid #bfbfbf;} 
-            `}</style>
 
+                .facilities-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                    gap: 16px;
+                }
+                .facility-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 18px; /* Increase icon size and text font size */
+                    font-weight: bold;
+                }
+                .facility-icon {
+                    margin-bottom: 8px; /* Move text below the icon */
+                }
+                `}
+            </style>
 
-            <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 ">오시는 길</h2>
+            <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">오시는 길</h2>
             <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
             <div className="relative w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden mb-8">
@@ -111,19 +129,40 @@ export default function KakaoMap() {
                 <div className="flex flex-col md:flex-row justify-between items-start">
                     <div className="text-gray-700 space-y-4 md:w-3/5">
                         <h2 className="text-2xl font-bold text-gray-800">매장 정보</h2>
-                        <p><strong>도로명: 대구 수성구 청솔로2길 37 1층</strong></p>
-                        <p><strong>지번: 황금동 691-3</strong></p>
-                        <p><strong>우편번호: 42144</strong></p>
-                        <p><strong>전화번호: 053-768-7738</strong></p>
+                        <p><span className="text-lg font-sans truncate block">도로명: 대구 수성구 청솔로2길 37 1층</span></p>
+                        <p><span className="text-lg font-sans truncate block">전화번호: 053-768-7738</span></p>
 
                         <h2 className="text-2xl font-semibold text-gray-800 mt-6">영업시간</h2>
-                        <p><strong>11:00 ~ 20:00</strong></p>
-                        <p><strong>매주 월요일 정기휴무</strong></p>
+                        <p><span className="text-lg font-sans truncate block">11:00 ~ 20:00</span></p>
+                        <p><span className="text-lg font-sans truncate block">매주 월요일 정기휴무</span></p>
 
                         <h2 className="text-2xl font-semibold text-gray-800 mt-6">편의시설</h2>
-                        <p><strong>건물 내 무료 주차</strong></p>
-                        <p><strong>무선 인터넷</strong></p>
-                        <p><strong>메이크업</strong></p>
+                        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-3">
+                            <div className="facility-item">
+                                <FontAwesomeIcon icon={faParking} className="facility-icon text-3xl mb-2" />
+                                <span className="text-[12px] sm:text-sm font-sans truncate block">건물 내 무료 주차</span>
+                            </div>
+                            <div className="facility-item">
+                                <FontAwesomeIcon icon={faWifi} className="facility-icon text-3xl mb-2" />
+                                <span className="text-[12px] sm:text-sm font-sans truncate block">무선 인터넷</span>
+                            </div>
+                            <div className="facility-item">
+                                <FontAwesomeIcon icon={faRestroom} className="facility-icon text-3xl mb-2" />
+                                <span className="text-[12px] sm:text-sm font-sans truncate block">남/녀 화장실 구분</span>
+                            </div>
+                            <div className="facility-item">
+                                <FontAwesomeIcon icon={faUsers} className="facility-icon text-3xl mb-2" />
+                                <span className="text-[12px] sm:text-sm font-sans truncate block">단체 이용 가능</span>
+                            </div>
+                            <div className="facility-item">
+                                <FontAwesomeIcon icon={faWheelchair} className="facility-icon text-3xl mb-2" />
+                                <span className="text-[12px] sm:text-sm font-sans truncate block">출입구 휠체어 가능</span>
+                            </div>
+                            <div className="facility-item">
+                                <FontAwesomeIcon icon={faWheelchair} className="facility-icon text-3xl mb-2" />
+                                <span className="text-[12px] sm:text-sm font-sans truncate block">장애인 주차구역</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="mt-6 md:mt-0 md:w-[50%] md:pl-8">

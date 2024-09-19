@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../css/font.css';
-import image1 from '../img/마음원장.jfif'; 
-import image2 from '../img/헤어브이.jpg'; 
-import image3 from '../img/헤어브이2.jpg'; 
-import image4 from '../img/헤어브이3.jpg'; 
+// import image1 from '../img/마음원장.jfif'; 
+// import image2 from '../img/헤어브이.jpg'; 
+// import image3 from '../img/헤어브이2.jpg'; 
+// import image4 from '../img/헤어브이3.jpg'; 
 import image5 from '../img/물결펌1.jpg'; 
 import image6 from '../img/번헤어1.jpg'; 
 import image7 from '../img/무거운레이어드1.jpg'; 
@@ -27,10 +27,10 @@ import image24 from '../img/허쉬레이어드펌.jfif';
 import { FaSearch, FaTimes } from 'react-icons/fa'; 
 
 const images = [
-  { src: image1, title: '마음 원장' },
-  { src: image2, title: '가게시설' },
-  { src: image3, title: '가게시설' },
-  { src: image4, title: '가게시설' },
+  // { src: image1, title: '마음 원장' },
+  // { src: image2, title: '가게시설' },
+  // { src: image3, title: '가게시설' },
+  // { src: image4, title: '가게시설' },
   { src: image5, title: '물결펌' },
   { src: image6, title: '번헤어' },
   { src: image7, title: '무거운레이어드' },
@@ -125,7 +125,7 @@ export default function Hairimg() {
 
   return (
     <div className="py-20 md:py-24 px-4 lg:px-20 relative fonttest">
-      <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">사진</h2>
+      <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">헤어시술</h2>
       <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
       <div className="relative flex justify-center mb-10">

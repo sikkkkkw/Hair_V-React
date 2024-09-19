@@ -1,24 +1,26 @@
 import React from 'react';
-import { FaInstagram } from 'react-icons/fa'; 
+import Image1 from '../img/logo.png'; // Hair_V 이미지
+import Image2 from '../img/마음원장.jfif'; // 마음 원장 이미지
+import Image3 from '../img/혜미인턴.jpg'; // 혜미 인턴 이미지
 import '../css/font.css';
 
 export default function Instagram() {
   // 스타일리스트 데이터를 배열로 관리
   const stylists = [
     {
-        name: '마음 원장',
-        hashtag: '#hair_v.maeum',
-        instagram: 'https://www.instagram.com/hair_v.maeum',
-      },
-    {
-      name: 'Hair_V',
       hashtag: '#hair_v__official',
       instagram: 'https://www.instagram.com/hair_v__official',
+      image: Image1,
     },
     {
-      name: '혜미 인턴',
+      hashtag: '#hair_v.maeum',
+      instagram: 'https://www.instagram.com/hair_v.maeum',
+      image: Image2,
+    },
+    {
       hashtag: '#hair_v_hm',
       instagram: 'https://www.instagram.com/hair_v_hm',
+      image: Image3,
     },
   ];
 
@@ -27,13 +29,19 @@ export default function Instagram() {
       <h2 className="text-center text-3xl lg:text-4xl font-bold mb-6 lg:mb-8">스타일리스트</h2>
       <div className="border-b-2 border-red-500 w-16 mx-auto mb-10"></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 lg:gap-16">
+      {/* 모바일에서는 1열, 중간 이상에서는 3열로 설정 */}
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-8 lg:gap-16">
         {stylists.map((stylist, index) => (
           <div key={index} className="text-center">
-            <a href={stylist.instagram} target="_blank" rel="noopener noreferrer" className="text-black hover:text-red-500 flex-wrap">
-              <FaInstagram className="text-6xl mx-auto mb-4 lg:mb-6" />
-              <h3 className="font-semibold text-xl lg:text-2xl">{stylist.name}</h3>
-              <p className="text-gray-600 text-sm lg:text-base">{stylist.hashtag}</p>
+            <a href={stylist.instagram} target="_blank" rel="noopener noreferrer" className="text-black hover:text-red-500">
+              {/* 스타일리스트 이미지 */}
+              <img 
+                src={stylist.image} 
+                alt={stylist.name} 
+                className="rounded-full w-20 h-20 md:w-40 md:h-40 mx-auto mb-2 md:mb-4 lg:mb-6 object-cover" 
+              />
+              {/* 해시태그 크기 조정 */}
+              <p className="font-semibold text-[10px] md:text-lg lg:text-2xl">{stylist.hashtag}</p>
             </a>
           </div>
         ))}
