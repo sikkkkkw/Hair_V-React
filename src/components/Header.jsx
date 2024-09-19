@@ -124,7 +124,7 @@ export default function Header() {
         {/* <div className="header-underline"></div>\ */}
       </div>
 
-      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative' style={{ paddingTop: '180px' }}>
+      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative' style={{ paddingTop: '80px' }}>
         <div
           className='flex transition-transform duration-1000 ease-in-out'
           style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
