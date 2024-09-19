@@ -122,20 +122,20 @@ export default function Header() {
         </div>
       </div>
 
-      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative pt-20'>
+      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative'>
         <div
           className='flex transition-transform duration-1000 ease-in-out'
           style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
         >
-          <img src={images[0]} alt="carousel 1" className='w-full h-full object-cover flex-shrink-0' />
-          <img src={images[1]} alt="carousel 2" className='w-full h-full object-cover flex-shrink-0' />
+          <img src={images[0]} alt="carousel 1" className='w-full h-full object-cover flex-shrink-0 mobile-height' />
+          <img src={images[1]} alt="carousel 2" className='w-full h-full object-cover flex-shrink-0 mobile-height' />
         </div>
       </div>
 
       <style jsx>{`
         @media (max-width: 1023px) {
-          .pt-20 {
-            padding-top: 100px; /* 모바일 화면에서 더 높은 패딩 */
+          .mobile-height {
+            height: 80vh; /* 모바일에서 높이 조정 */
           }
         }
       `}</style>
