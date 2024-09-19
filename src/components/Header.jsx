@@ -120,25 +120,19 @@ export default function Header() {
             </a> */}
           </div>
         </div>
+
+        {/* <div className="header-underline"></div>\ */}
       </div>
 
-      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative'>
+      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative' style={{ paddingTop: '120px' }}>
         <div
           className='flex transition-transform duration-1000 ease-in-out'
           style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
         >
-          <img src={images[0]} alt="carousel 1" className='w-full h-full object-cover flex-shrink-0 mobile-height' />
-          <img src={images[1]} alt="carousel 2" className='w-full h-full object-cover flex-shrink-0 mobile-height' />
+          <img src={images[0]} alt="carousel 1" className='w-full h-full object-cover flex-shrink-0' />
+          <img src={images[1]} alt="carousel 2" className='w-full h-full object-cover flex-shrink-0' />
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 1023px) {
-          .mobile-height {
-            height: 80vh; /* 모바일에서 높이 조정 */
-          }
-        }
-      `}</style>
     </>
   );
 }
