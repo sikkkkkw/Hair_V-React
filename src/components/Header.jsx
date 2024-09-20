@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import logo from '../img/hair_v_logo.png';
+import mobileLogo from '../img/logo가로.png'; // Import mobile logo
 import main2 from '../img/메인2.png';
 import main3 from '../img/메인3.png';
-import mobileMain2 from '../img/가게시설1.jpg'; // 모바일 이미지
-import mobileMain3 from '../img/가게시설2.jpg'; // 모바일 이미지
-import { FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa'; // 아이콘 임포트
+import mobileMain2 from '../img/가게시설1.jpg'; // Mobile image
+import mobileMain3 from '../img/가게시설2.jpg'; // Mobile image
+import { FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa';
 import '../css/globals.css';
 import Event from './Event';
 import '../css/font.css';
@@ -62,7 +63,7 @@ export default function Header() {
   }, []);
 
   const handleEventClose = () => {
-    Cookies.set('hideBanner', 'true', { expires: 1 / 24 }); // 1시간 후 만료
+    Cookies.set('hideBanner', 'true', { expires: 1 / 24 }); // 1 hour expiration
     setEventVisible(false);
   };
 
@@ -76,8 +77,13 @@ export default function Header() {
           <a href="#Hairimg" className="w-[120px] text-xl text-center">헤어시술</a>
         </div>
 
+        {/* Conditionally render the logo based on device type */}
         <div className='flex items-center md:justify-center justify-start flex-1'>
-          <img src={logo} alt='Logo' className='h-20' />
+          <img
+            src={isMobileOrTablet ? mobileLogo : logo}  // Dynamic logo change
+            alt='Logo'
+            className='h-14 md:h-20' 
+          />
         </div>
 
         <div className={`hidden md:flex space-x-4 ${isOpen ? 'opacity-0' : 'opacity-100'} fonttest transition-opacity duration-300`}>
@@ -102,7 +108,6 @@ export default function Header() {
             <a href="#information"  className='py-2 menu-item'>오시는 길</a>
           </div>
           <div className='flex flex-col items-center mt-4 space-y-4'>
-            {/* 소셜미디어 아이콘 추가 */}
             <div className='flex space-x-4'>
               <a href="https://www.instagram.com/hair_v__official" target="_blank" rel="noopener noreferrer" className='text-gray-700 hover:text-gray-900'>
                 <FaInstagram size={24} />
@@ -114,14 +119,8 @@ export default function Header() {
                 <FaFacebook size={24} />
               </a>
             </div>
-            {/* 문의하기 버튼 추가
-            <a href="mailto:contact@example.com" className='py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600'>
-              문의하기
-            </a> */}
           </div>
         </div>
-
-        {/* <div className="header-underline"></div>\ */}
       </div>
 
       <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative md:h-[calc(var(--vh, 1vh) * 100)]' style={{ paddingTop: '80px' }}>
