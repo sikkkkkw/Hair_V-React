@@ -124,13 +124,13 @@ export default function Header() {
         {/* <div className="header-underline"></div>\ */}
       </div>
 
-      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative' style={{ paddingTop: '80px' }}>
+      <div className='w-full h-[calc(var(--vh, 1vh) * 100)] overflow-hidden relative md:h-[calc(var(--vh, 1vh) * 100)]' style={{ paddingTop: '80px' }}>
         <div
           className='flex transition-transform duration-1000 ease-in-out'
           style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
         >
-          <img src={images[0]} alt="carousel 1" className='w-full h-full object-cover flex-shrink-0' />
-          <img src={images[1]} alt="carousel 2" className='w-full h-full object-cover flex-shrink-0' />
+          <img src={images[0]} alt="carousel 1" className='w-full h-[50vh] md:h-full object-cover flex-shrink-0' />
+          <img src={images[1]} alt="carousel 2" className='w-full h-[50vh] md:h-full object-cover flex-shrink-0' />
         </div>
       </div>
     </>
