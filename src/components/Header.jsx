@@ -15,12 +15,12 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [eventVisible, setEventVisible] = useState(true);
-  const [isMobileOrTablet, setIsMobileOrTablet] = useState(window.innerWidth < 1024); // Adjusted for tablets
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // Adjusted for mobile only
 
   const desktopImages = [main2, main3];
   const mobileImages = [mobileMain2, mobileMain3];
 
-  const images = isMobileOrTablet ? mobileImages : desktopImages;
+  const images = isMobile ? mobileImages : desktopImages;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -28,7 +28,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileOrTablet(window.innerWidth < 1024); // Adjusted for tablets
+      setIsMobile(window.innerWidth < 768); // Adjusted for mobile only
       if (window.innerWidth >= 768) {
         setIsOpen(false);
       }
@@ -80,7 +80,7 @@ export default function Header() {
         {/* Conditionally render the logo based on device type */}
         <div className='flex items-center md:justify-center justify-start flex-1'>
           <img
-            src={isMobileOrTablet ? mobileLogo : logo}  // Dynamic logo change
+            src={isMobile ? mobileLogo : logo}  // Dynamic logo change
             alt='Logo'
             className='h-14 md:h-20' 
           />
